@@ -1,0 +1,58 @@
+// Creating a new Promise
+const myPromise = new Promise((resolve, reject) => {
+  // Simulating an asynchronous operation
+  setTimeout(() => {
+    const success = true; // Change this to false to simulate failure
+    if (success) {
+      resolve("Operation successful!");
+    } else {
+      reject("Operation failed!");
+    }
+  }, 2000); // Simulates a 2-second delay
+});
+
+// Using the Promise
+myPromise
+  .then((result) => {
+    console.log("Success:", result);
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+  })
+  .finally(() => {
+    console.log("Promise completed, regardless of outcome.");
+  });
+
+// Chaining Promises
+function fetchUserData(userId) {
+  return new Promise((resolve, reject) => {
+    // Simulating API call
+    setTimeout(() => {
+      resolve({ id: userId, name: "John Doe" });
+    }, 1000);
+  });
+}
+
+function fetchUserPosts(user) {
+  return new Promise((resolve, reject) => {
+    // Simulating API call
+    setTimeout(() => {
+      resolve([
+        { id: 1, title: "Post 1" },
+        { id: 2, title: "Post 2" }
+      ]);
+    }, 1000);
+  });
+}
+
+fetchUserData(123)
+  .then(user => fetchUserPosts(user))
+  .then(posts => console.log("User's posts:", posts))
+  .catch(error => console.error("Error:", error));
+
+// Using Promise.all
+const promise1 = Promise.resolve(3);
+const promise2 = new Promise((resolve) => setTimeout(() => resolve(42), 100));
+
+Promise.all([promise1, promise2])
+  .then(values => console.log("Results:", values));
