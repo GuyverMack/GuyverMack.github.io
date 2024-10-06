@@ -17,6 +17,11 @@ img {
 	width: 200px;
 	height: 200px;
 }
+#404bunny {
+	width: 600px;
+	height: 600px;
+
+}
 /* Styles for smaller screens (mobile) */
 @media (max-width: 768px) {
 	.header-logo {
