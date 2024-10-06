@@ -14,3 +14,38 @@ img{
     width:200px;
     height:200px;
 }
+
+/* Styles for smaller screens (mobile) */
+
+@media (max-width: 768px) {
+
+	.header-logo { 
+  
+	  width: 50px;
+  
+	}
+  
+	.main-content { 
+  
+	  font-size: 16px;
+  
+	}
+  
+  }
+  /* Styles for larger screens (desktop) */
+  
+  @media (min-width: 769px) {
+  
+	.header-logo { 
+  
+	  width: 100px;
+  
+	}
+  
+	.main-content { 
+  
+	  font-size: 20px;
+  
+	}
+  
+  }

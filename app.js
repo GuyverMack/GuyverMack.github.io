@@ -5,7 +5,7 @@ URL="http://pages.github.com/guyvermack/content/XXX"
 function loadImages(numImages = 10) {
     let i = 0;
     while (i < numImages) {
-        fetch('XXX')
+        fetch('URL')
             .then(response => response.json())
             .then(data => {
                 const img = document.createElement('img');
