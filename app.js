@@ -15,8 +15,9 @@ function loadNextFile() {
       
       if (iframe && loader) {
         setTimeout(() => {
-          // Use the file name from the array, not a numeric index
-          iframe.src = "content/Coding Study Wiki acb5908e8a664382af6667917c0e6cf2/" + fileArray[fileIndex];
+          // Encode the filename to handle spaces and special characters
+          const encodedFilename = encodeURIComponent(fileArray[fileIndex]);
+          iframe.src = "content/" + encodedFilename;
           fileIndex++;
           
           if (fileIndex < fileArray.length) {
