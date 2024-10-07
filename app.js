@@ -9,24 +9,25 @@ const iframe = document.getElementById("contentFrame");
 let fileIndex = 0;
 
 function loadNextFile() {
-  if (fileIndex < fileArray.length) {
-    const iframe = document.getElementById("contentFrame");
-    const loader = document.getElementById("loading");
-    
-    if (iframe && loader) {
-      setTimeout(() => {
-        iframe.src = "content/" + fileArray[fileIndex];
-        fileIndex++;
-        
-        if (fileIndex < fileArray.length) {
-          loader.style.display = "block";
-        } else {
-          loader.style.display = "none";
-        }
-      }, 500);
+    if (fileIndex < fileArray.length) {
+      const iframe = document.getElementById("contentFrame");
+      const loader = document.getElementById("loading");
+      
+      if (iframe && loader) {
+        setTimeout(() => {
+          // Use the file name from the array, not a numeric index
+          iframe.src = "content/" + fileArray[fileIndex];
+          fileIndex++;
+          
+          if (fileIndex < fileArray.length) {
+            loader.style.display = "block";
+          } else {
+            loader.style.display = "none";
+          }
+        }, 500);
+      }
     }
   }
-}
 
 document.addEventListener("DOMContentLoaded", () => {
   const loader = document.getElementById("loading");
