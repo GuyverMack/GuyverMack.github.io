@@ -11,25 +11,35 @@
 	display: flex;
 	flex-wrap: wrap;
 }
-#banner {	margin: 5px;
-	width: auto;
-	height: 200px;}
 
-	#images > img {
-		width: 100%; 
-		height: auto; 
-	 }
+#banner {
+	margin: 5px;
+	width: auto;
+	height: 200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#images>img {
+	width: 100%;
+	height: auto;
+}
+
+#contentFrame {
+	border: solid;
+}
 
 #scroll-img {
 	margin: 5px;
 	width: 200px;
 	height: 200px;
 }
+
 #404bunny {
 	width: 600px;
 	height: 600px;
-
 }
+
 /* /* Styles for smaller screens (mobile) /
 @media (max-width: 768px) {
 	.header-logo {
@@ -40,7 +50,8 @@
 		background-color: var(--color-4);
 	}
 }
- Styles for larger screens (desktop) */ /*
+ Styles for larger screens (desktop) */
+/*
 @media (min-width: 769px) {
 	.header-logo {
 		width: 100px;
@@ -51,6 +62,6 @@
 	}
 } */
 body {
- 	background-color: var(--color-2);
+	background-color: var(--color-2);
 	color: var(--color-4);
 }
