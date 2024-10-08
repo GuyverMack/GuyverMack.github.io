@@ -17,7 +17,7 @@ function loadNextFile() {
         setTimeout(() => {
           // Encode the filename to handle spaces and special characters
           const encodedFilename = encodeURIComponent(fileArray[fileIndex]);
-          iframe.src = "content/" + encodedFilename;
+          iframe.src = "content/Coding_Study_Wiki_acb5908e8a664382af6667917c0e6cf2/" + encodedFilename;
           fileIndex++;
           
           if (fileIndex < fileArray.length) {
