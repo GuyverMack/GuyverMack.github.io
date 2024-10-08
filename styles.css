@@ -11,6 +11,14 @@
 .container {
 	display: flex;
 	flex-wrap: wrap;
+
+}
+nav {
+	border: 1px solid black;
+
+}
+nav a {
+border: none;
 }
 
 #banner {
