@@ -12,7 +12,7 @@
 	flex-wrap: wrap;
 }
 #banner {	margin: 5px;
-	width: 100%;
+	width: auto;
 	height: 200px;}
 
 	#images > img {
