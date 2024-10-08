@@ -19,7 +19,7 @@ function loadNextFile() {
           
           if (fileIndex < fileArray.length) {
             loader.style.display = "block";
-            alert("loader.style.display: " + fileArray[fileIndex]);
+            console.alert(" : " + fileArray[fileIndex]);
           } else {
             loader.style.display = "none";
           }
