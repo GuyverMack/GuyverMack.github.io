@@ -6,50 +6,51 @@ const fileArray = ["arguments_(PowerShell)_1131011fa4868085836bf797d34f8127.html
 let fileIndex = 0;
 
 function loadNextFile() {
-    if (fileIndex < fileArray.length) {
+    if (fileIndex >= fileArray.length) {
+      fileIndex = 0;
+    }      
+      
+      
       const iframe = document.getElementById("contentFrame");
-      const loader = document.getElementById("loading");
+//      const loader = document.getElementById("loading");
       
-      if (iframe && loader) {
-        setTimeout(() => {
+      if (iframe) {
+        const fileName = fileArray[fileIndex];
+        const fileContent = document.createElement('div');
+        fileContent.innerHTML = `
+          <iframe src="content/Coding_Study_Wiki_acb5908e8a664382af6667917c0e6cf2/${fileName}" frameborder="0" width="100%" height="100%"></iframe>
+        `;
+        const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+        iframeDocument.body.appendChild(fileContent);
+
+        fileIndex++;
+      }
+}
+
+      document.addEventListener("DOMContentLoaded", () => {
+      const iframe = document.getElementById("contentFrame");
+      if (!iframe) {
+        console.error("Content frame not found")
       
-          iframe.src = "content/Coding_Study_Wiki_acb5908e8a664382af6667917c0e6cf2/" + fileArray[fileIndex];
-          fileIndex++;
-          
-          if (fileIndex < fileArray.length) {
-            loader.style.display = "block";
+          return;
+        }
 
-          } else {
-            loader.style.display = "none";
-          }
-        }, 500);
-      }
-    }
-  }
+        iframe.onload = () => {
+            const iframeWindow = iframe.contentWindow;
+            const iframeDocument = iframe.contentDocument || iframeWindow.document;
 
-document.addEventListener("DOMContentLoaded", () => {
-  const loader = document.getElementById("loading");
-  if (!loader) {
-    console.error("Loading element not found");
-    return;
-  }
+            iframeWindow.addEventListener('scroll', () => {
+              const scrollPosition = iframeDocument.documentElement.scrollTop + iframeDocument.documentElement.clientHeight;
+              const scrollHeight = iframeDocument.documentElement.scrollHeight;
+              
+              if (scrollHeight -scrollPosition < 300) {
+                loadNextFile();
+              }
+            });
+            loadNextFile();
+            loadNextFile();
+          }; 
+          iframe.src - 'about:blank';
+        });
 
-  let options = {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.25
-  };
 
-  function handleIntersect(entries, observer) {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        loadNextFile();
-      }
-    });
-  }
-
-  let observer = new IntersectionObserver(handleIntersect, options);
-  observer.observe(loader);
-
-  loadNextFile();
-});
