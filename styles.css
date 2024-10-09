@@ -55,6 +55,9 @@ border: none;
 #404bunny {
 	width: 600px;
 	height: 600px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
  /* Styles for smaller screens (mobile) */
