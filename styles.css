@@ -5,57 +5,54 @@
 	--color-2: rgb(225, 242, 237);
 	--color-3: rgb(137, 217, 199);
 	--color-4: rgb(25, 78, 74);
-	color: --color-4;
+}
+body {
+	background-color: white;
+	color: black;
 }
 
-.element {
-	max-width: fit-content;
-	margin-left: auto;
-	margin-right: auto;
-  }
-
-.container {
-	display: flex;
-	flex-wrap: wrap;
-
+upperNav {
+	border: none;
+	padding: 2px;
+	float: right;
 }
+
 nav {
-	border: 1px solid black;
-	max-width: fit-content;
-	margin-left: auto;
+	border: none;
 	margin-right: auto;
 	padding: 2px;
 
 }
-nav a {
-border: none;
+nav a:hover {
+text-decoration: none;
+}
+
+#bannerWrapper {
+	max-width: fit-content;
+display: flex;
+align-items: flex-end;
+
 }
 
 #banner {
 	margin: 5px;
 	width: auto;
 	height: 200px;
-	margin-left: auto;
-	margin-right: auto;
 
-	
 }
 
 #contentFrame {
 	border: solid;
-
-}
-
-#scroll-img {
-	margin: 5px;
-	width: 200px;
-	height: 200px;
 }
 
 #404bunny {
-	width: 600px;
-	height: 600px;
-	display: block;
+	max-width: 400px;	
+}
+#404bunny img {
+	width: 400px;
+	height: 350px;
+	display: flex;
+    justify-content: center;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -78,10 +75,6 @@ border: none;
 	}
 	.main-content {
 		font-size: 20px;
-		background-color: var(--color-4);
+		background-color: white;
 	}
 } 
-body {
-	background-color: var(--color-2);
-	color: var(--color-4);
-}

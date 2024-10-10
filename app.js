@@ -5,8 +5,7 @@ let fileIndex = 0;
 function loadNextFile() {
     if (fileIndex >= fileArray.length) {
       fileIndex = 0;
-    }      
-      
+    }
       
       const iframe = document.getElementById("contentFrame");
       
@@ -21,13 +20,12 @@ function loadNextFile() {
 
         fileIndex++;
       }
-}
+} // end function loadNextFile
 
       document.addEventListener("DOMContentLoaded", () => {
       const iframe = document.getElementById("contentFrame");
       if (!iframe) {
-        console.error("Content frame not found")
-      
+        console.error("Content frame not found");
           return;
         }
 
@@ -45,7 +43,7 @@ function loadNextFile() {
             });
             loadNextFile();
             loadNextFile();
-          }; 
+          }; // end iframe.onLoad()
           iframe.src - 'about:blank';
         });
 
