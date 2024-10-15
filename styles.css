@@ -10,41 +10,48 @@ body {
 	background-color: white;
 	color: black;
 }
-
 upperNav {
 	border: none;
 	padding: 2px;
-	float: right;
 }
-
 nav {
 	border: none;
+	color: var(--color-4);
 	margin-right: auto;
 	padding: 2px;
-
+	font-size: larger;
+	font-weight: 400;
+	text-shadow: --color-3 5px 0 10px;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 nav a:hover {
 text-decoration: none;
 }
-
 #bannerWrapper {
 	max-width: fit-content;
 display: flex;
-align-items: flex-end;
-
+align-items: stretch;
 }
-
+.text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5px;
+}
+.top-text {
+    align-self: flex-start;
+}
+.bottom-text {
+    align-self: flex-end;
+}
 #banner {
 	margin: 5px;
 	width: auto;
 	height: 200px;
-
 }
-
 #contentFrame {
 	border: solid;
 }
-
 #404bunny {
 	max-width: 400px;	
 }
